@@ -1,0 +1,49 @@
+body {
+    background-color: #c1dbdb;
+}
+
+h1 {
+    color: #ffa3d2;
+    font-family: "Lexend Mega", sans-serif;
+    font-size: 4rem;
+    text-shadow: #dd7cad 2px 2px;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    font-family: "Lexend Mega", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #266060;
+    background-color: #a6d6d6;
+    border-radius: 20px;
+    border: 3px solid #4f9898;
+}
+
+button:active {
+    background-color: #4f9898;
+    box-shadow: none;
+    border-style: none;
+}
+
+.pressed {
+    background-color: #4f9898;
+    box-shadow: none;
+    border-style: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.title-container {
+    text-align: center;
+}
+
+.button-container {
+    text-align: center;
+    letter-spacing: 10px;
+    margin: 30px;
+}
+
