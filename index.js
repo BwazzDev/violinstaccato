@@ -39,6 +39,10 @@ function playSound(key) {
         case "u":
             let u = new Audio("sounds/staccato-b.mp3");
             u.play();
+            break;
+        case "i":
+            let i = new Audio("sounds/staccato-c2.mp3");
+            i.play();
             break
         case "d":
             let d = new Audio("sounds/chord-d.mp3");
