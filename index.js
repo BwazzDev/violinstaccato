@@ -10,6 +10,10 @@ document.addEventListener("keypress", function (event) {
     buttonAnimation(event.key);
 });
 
+document.addEventListener("keypress", function (event) {
+
+});
+
 function playSound(key) {
     switch (key) {
         case "q":
@@ -60,6 +64,10 @@ function playSound(key) {
             let h = new Audio("sounds/chord-h.mp3");
             h.play();
             break
+        case "demo":
+            playDemo(130);
+            console.log("demo activated");
+            break
         default:
             console.log("default was triggered");
     }
@@ -73,6 +81,40 @@ function buttonAnimation(currentKey) {
     setTimeout(function () {
         activeButton.classList.remove("pressed");
     }, 200);
+}
+
+function demoPlaySound(key, delay) {
+    setTimeout(function () {
+        playSound(key);
+        buttonAnimation(key);
+    }, delay);
+}
+
+function playDemo(bpm) {
+    let demoButton = document.querySelector(".demo");
+    if (!demoButton.classList.contains("pressed")) {
+        bpm = 1000 / bpm * 10;
+        document.querySelector(".demo").classList.add("pressed");
+        demoPlaySound("f", 0 * bpm);
+        demoPlaySound("f", 4.5 * bpm);
+        demoPlaySound("h", 9 * bpm);
+
+        demoPlaySound("f", 24 * bpm);
+        demoPlaySound("f", 28.5 * bpm);
+        demoPlaySound("d", 33 * bpm);
+
+        demoPlaySound("f", 48 * bpm);
+        demoPlaySound("f", 52.5 * bpm);
+        demoPlaySound("h", 57 * bpm);
+        demoPlaySound("h", 66 * bpm);
+
+        demoPlaySound("g", 72 * bpm);
+        demoPlaySound("g", 76.5 * bpm);
+        demoPlaySound("d", 81 * bpm);
+        setTimeout(function () {
+            document.querySelector(".demo").classList.remove("pressed");
+        }, 83 * bpm);
+    }
 
 }
 
